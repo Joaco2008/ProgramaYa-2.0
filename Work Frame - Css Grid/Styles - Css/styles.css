@@ -1,0 +1,606 @@
+* {
+    font-family: Montserrat, sans-serif;
+    margin: 0%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 25px;
+    background-color: #e3eaff;
+}
+
+/*------- General Styles ---------*/
+
+.header,.nav, .main, .footer, section, form {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+div, ul, li, label, input {
+    padding: 0%;
+}
+
+/*-------- Header Section -------*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    background-color: #48e;
+    padding: 10px;
+    align-items: center;
+    container-type: inline-size;
+    container-name: header;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    box-shadow: 0px 5px 20px #0009;
+}
+
+.logo-empresa a {
+    color: #e3eaff;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 20px 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-empresa a:not(:hover) {
+    text-decoration: none;
+}
+
+#menu--nav-bar {
+    display: none;
+}
+
+.button--menu {
+    position: absolute;
+    color: #e3eaff;
+    font-size: 3rem;
+    right: 10px;
+    cursor: pointer;
+    padding: 5px 15px;
+    z-index: 4;
+}
+
+#menu--nav-bar:checked ~ .nav {
+    display: flex;
+    animation: aparecer--nav .9s forwards ease;
+}
+
+.list--item a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px;
+    font-size: 1.1rem;
+    color: #e3eaff;
+}
+
+.list--item a:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #48e;
+}
+
+.nav-bar--list {
+    list-style: none;
+    display: flex;
+    height: 40%;
+    width: 100%;
+    background-color: transparent;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/*-------- Header Queries Section -------*/
+
+@container header (min-width:650px) {
+    .nav {
+        position: static;
+        z-index: 0;
+        height: auto;
+        width: auto;
+    }
+    .nav-bar--list {
+        flex-direction: row;
+        height: auto;
+        width: auto;
+    }
+
+    .list--item a {
+        color: #e3eaff;
+        padding: 10px;
+    }
+
+    .list--item a:hover {
+        background-color: #e3eaff;
+        color: #48e;
+    }
+
+    .button--menu {
+        display: none;
+    }
+    #menu--nav-bar:checked ~ .nav {
+        display: flex;
+        animation: none;
+    }
+
+    .button--menu:not(:checked) ~ .nav {
+        display: flex;
+    }
+}
+
+/*-------- Header Ends -------*/
+
+/*-------- Main Section -------*/
+
+.main {
+    flex-grow: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    container-name: main;
+    container-type: inline-size;
+}
+
+.main--wrapper {
+    border: 2px solid #18233f;
+    background-color: #18233f;
+    box-sizing: border-box;
+    min-width: 270px;
+    max-width: 1000px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    border-radius: 25px;
+    box-shadow: 0 0 20px #0009;
+    animation: page--refresh 2s 0.4s both;
+}
+
+.main--info-img {
+    background-image: url(/media/lucas-dalto.jpg);
+    background-size: cover;
+    background-position: center top;
+    border-radius: 25px;
+    opacity: 0.8;
+    filter:saturate(1.4);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    text-wrap: balance;
+    color: #e3eaff;
+}
+
+.main--info {
+    box-sizing: border-box;
+    padding: 20px;
+    color: #e3eaff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+span::before {
+    background-color: #48e;
+    content: "Lucas Dalto!";
+    opacity: 0.95;
+}
+
+.info--text {
+    text-wrap: pretty;
+    text-align: justify;
+}
+
+.info--skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    box-sizing: border-box;
+    padding: 10px;
+    z-index: 0;
+    position: relative;
+}
+
+h3 {
+    font-size: 1.7rem;
+}
+
+.porcent--container {
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    display: flex;
+    padding: 4px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;;
+}
+
+.porcent--80, .porcent--70, .porcent--90, .porcent--85, .porcent--95 {
+    background-color: #48e;
+    border-radius: 20px;
+    padding: 2px 8px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+.porcent--80 {
+    animation-name: porcent-80;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    width: 80%;
+}
+
+.porcent--90 {
+    animation-name: porcent-90;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    width: 90%;
+}
+
+.porcent--70 {
+    animation-name: porcent-70;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    width: 70%;
+}
+
+.porcent--85 {
+    animation-name: porcent-85;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    width: 85%;
+}
+
+.porcent--95 {
+    animation-name: porcent-95;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    width: 95%;
+}
+
+
+.porcent--container p {
+    position: absolute;
+    right: 10px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/*-------- Main Ends -------*/
+
+/*-------- Portfolio Section -------*/
+
+.portfolio--image {
+    background-color: #18233f;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.image--container {
+    width: 100%;
+    max-width: 1300px;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: minmax(250px,1fr);
+    grid-auto-rows: minmax(200px, 1fr);
+    gap: 20px;
+    padding: 5px;
+    background-color: transparent;
+    container-name: projects-section;
+    container-type: inline-size;
+}
+.image--items {
+    background-image: url(/media/lucas-dalto.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    color: #e3eaff;
+    background-position: center;
+    font-size: 2rem;
+    opacity: 0.6;
+    filter: saturate(1.2);
+    filter: grayscale(1);
+    transition-property: filter, opacity;
+    transition-duration: 1s;
+}
+
+.image--items:hover {
+    opacity: 1;
+    filter: grayscale(0);
+    transition-duration: 0.5s;
+    outline: 2px solid #e3eaff;
+}
+
+/*-------- Projects Queries -------*/
+
+@media screen and (min-width:43.75rem) {
+    .image--container {
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+
+    .image--items:first-child, .image--items:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width:68.75rem) {
+    .image--container {
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+    }
+
+    .image--items:first-child {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .image--items:last-child {
+        grid-column: span 3;
+    }
+}
+/*-------- Projects Ends -------*/
+
+/*-------- Contact Section -------*/
+
+.form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    container-name: form--container;
+    container-type: inline-size;
+}
+
+.form--container {
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    padding: 14px;
+    display: grid;
+    gap: 14px;
+}
+
+.form--container-inputs :is(input, textarea) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    border: none;
+    box-shadow: 2px 4px 10px #0005;
+    outline: none;
+    transition-property: background, color;
+    transition-duration: 0.4s;
+}
+
+.form--container-inputs textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+.form--container-inputs :is(input, textarea):hover, .form--button:hover {
+    background: #18233f;
+    color: #e3eaff;
+    transition-duration: 0.6s;
+}
+
+.form--button {
+    font-size: 1rem;
+    background-color: #48e;
+    color: #e3eaff;
+    border: none;
+    padding: 12px;
+    transition-property: background, color;
+    transition-duration: 0.6s;
+}
+
+.form h2 {
+    font-size: 2.5rem;
+    padding: 0 0 20px 0;
+    color: #18233f;
+    text-align: center;
+}
+
+/*-------- Contact Queries -------*/
+
+@container form--container (min-width:56.25rem) {
+
+    .form h2 {
+        font-size: 3rem;
+    }
+    .form--container {
+        grid-template-areas: 
+        "name surname"
+        "email email"
+        "message message"
+        "button button";
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .form--container-inputs:nth-child(1){
+        grid-area: name;
+    }
+    .form--container-inputs:nth-child(2){
+        grid-area: surname;
+    }
+    .form--container-inputs:nth-child(3){
+        grid-area: email;
+    }
+    .form--container-inputs:nth-child(4){
+        grid-area: message;
+    }
+    .form--button{
+        grid-area: button;
+    }
+}
+
+/*-------- Contact Ends -------*/
+
+/*-------- Footer Section -------*/
+
+.footer {
+    flex: 1;
+    background-color: #18233f;
+    color: #eee;
+    text-align: center;
+    padding: 30px;
+    text-wrap: pretty;
+}
+
+/*-------- Footer Ends -------*/
+
+/*------- Media Queries for animations -------*/
+
+@media screen and (min-width:900px){
+
+    .image--container {
+        view-timeline: --portfolio block;
+    }
+
+     .image--items {
+        animation: aparecer both;
+        animation-range-start: cover 0%;
+        animation-range-end: cover 70%;
+    }
+
+    .image--items {
+        animation-timeline: --portfolio;
+
+    }
+}
+
+/*-------- Animations --------*/
+
+@keyframes aparecer--nav {
+    from {
+        height: 0;
+        padding-top: 50px;
+    }
+
+    to {
+        padding-top: 0%;
+        height: 100vh;
+    }
+}
+
+@keyframes page--refresh {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*----- Keyframes and Media Queries for tablets and Pc's ------*/
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*-------- Main Animations -------*/
+
+@keyframes porcent-80 {
+    from {
+        width: 0%;
+        background-color: #18233f;
+    }
+    to {
+        width: 80%;
+        background-color: #48e;
+    }
+}
+
+@keyframes porcent-90 {
+    from {
+        width: 0%;
+        background-color: #18233f;
+    }
+    to {
+        width: 90%;
+        background-color: #48e;
+    }
+}
+
+@keyframes porcent-70 {
+    from {
+        width: 0%;
+        background-color: #18233f;
+    }
+    to {
+        width: 70%;
+        background-color: #48e;
+    }
+}
+
+@keyframes porcent-85 {
+    from {
+        width: 0%;
+        background-color: #18233f;
+    }
+    to {
+        width: 85%;
+        background-color: #48e;
+    }
+}
+
+@keyframes porcent-95 {
+    from {
+        width: 0%;
+        background-color: #18233f;
+    }
+
+    to {
+        width: 95%;
+        background-color: #48e;
+    }
+}

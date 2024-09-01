@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles - Css/normalize.css">
+    <link rel="stylesheet" href="/Styles - Css/styles.css">
+    <title>ProgramaYa</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-empresa">
+            <a href="#about-us">ProgramaYa</a>
+        </div>
+        <input type="checkbox" name="checkbox--menu" id="menu--nav-bar" role="button">
+        <label class="button--menu" for="menu--nav-bar">=</label>
+        <nav class="nav">
+            <ul class="nav-bar--list">
+                <li class="list--item"><a href="#about-us">About Us</a></li>
+                <li class="list--item"><a href="#portfolio">Portfolio</a></li>
+                <li class="list--item"><a href="#contact">Contact</a></li>
+                <li class="list--item"><a href="#terms--conditions">Terms & Conditions</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main" id="about-us">
+        <div class="main--wrapper">
+            <div class="main--info-img"></div>
+            <div class="main--info">
+                <h1>¡Learn with <span></span></h1>
+                <p class="info--text">Lucas Dalto stood out as a young prodigy who quickly made a name for himself in the community. From his teenage years, he showed an innate ability to understand and master programming languages, turning simple lines of code into powerful solutions that impacted thousands.
+                    <br>
+                    On his YouTube channel, he began sharing his knowledge with contagious passion, democratizing access to technology education.</p>
+                <h3>Skills</h3>
+                <div class="info--skills">
+                    <div class="porcent--container">
+                        <div class="porcent--80">80%</div><p>SQL</p>
+                    </div>
+                    <div class="porcent--container">
+                        <div class="porcent--70">70%</div><p>PYTHON</p>
+                    </div>
+                    <div class="porcent--container">
+                        <div class="porcent--90">90%</div><p>JS</p>
+                    </div>
+                    <div class="porcent--container">
+                        <div class="porcent--85">85%</div><p>CSS</p>
+                    </div>
+                    <div class="porcent--container">
+                        <div class="porcent--95">95%</div><p>HTML</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="portfolio--image" id="portfolio">
+        <div class="image--container">
+            <div class="image--items">Project 1</div>
+            <div class="image--items">Project 2</div>
+            <div class="image--items">Project 3</div>
+            <div class="image--items">Project 4</div>
+            <div class="image--items">Project 5</div>
+            <div class="image--items">Project 6</div>
+        </div>
+    </section>
+    <form class="form" action="" id="contact">
+        <h2>Contact</h2>
+        <div class="form--container">
+            <div class="form--container-inputs">
+                <label for="name">Name
+                    <input type="text" name="" id="name" placeholder="John" required minlength="3">
+                </label>
+            </div>
+            <div class="form--container-inputs">
+                <label for="surname">Surname
+                    <input type="text" name="" id="surname" placeholder="Doe" required minlength="3">
+                </label>
+            </div>
+            <div class="form--container-inputs">
+                <label for="email">E-mail
+                    <input type="email" name="" placeholder="example@gmail.com" id="email" required>
+                </label>
+            </div>
+            <div class="form--container-inputs">
+                <label for="message">Message
+                    <textarea placeholder="Max: 200 caracters" name="" maxlength="200" id="message"></textarea>
+                </label>
+            </div>
+            <button class="form--button">Send</button>
+        </div>
+    </form>
+    <footer class="footer" id="terms--conditions">
+        <p><strong>ProgramaYa</strong> - @Copyright 2024 2027</p>
+    </footer>
+</body>
+</html>
